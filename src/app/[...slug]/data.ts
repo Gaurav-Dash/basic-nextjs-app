@@ -25,7 +25,7 @@ export async function fetchData() {
       .map((item) => {
         const { slug } = item.fields;
 
-        return { slug };
+        return { slug: `${slug}/a/b` };
       })
       .flat();
   } catch (error) {

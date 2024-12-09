@@ -4,9 +4,7 @@ import Image from "next/image";
 
 export async function generateStaticParams() {
   const pages = await fetchPages();
-  return pages.map((page) => ({
-    id: page.slug,
-  }));
+  return pages;
 }
 
 const Page = async ({ params }: { params: { slug: string[] } }) => {
