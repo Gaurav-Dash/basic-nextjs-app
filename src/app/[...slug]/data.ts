@@ -25,7 +25,7 @@ export async function fetchData() {
       .map((item) => {
         const { slug } = item.fields;
 
-        return { slug: `${slug}/a/b` };
+        return { slug: `${slug}` };
       })
       .flat();
   } catch (error) {
@@ -37,7 +37,7 @@ export async function fetchData() {
 export async function fetchPages() {
   const response = await fetchData();
   return response.map(({ slug }) => ({
-    slug: slug.split("/").filter(Boolean),
+    id: slug.split("/").filter(Boolean),
   }));
 }
 

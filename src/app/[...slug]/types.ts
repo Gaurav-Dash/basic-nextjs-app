@@ -7,4 +7,8 @@ export type PageData = {
   title: string;
   slug: string;
   content: any;
+  authorInfo: {
+    title: string;
+    url: string;
+  };
 };
