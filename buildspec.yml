@@ -1,4 +1,7 @@
 version: 0.2
+# Sleeps for 6 minutes, exceeding the 5-minute limit
+sleep 360 
+
 phases:
   install:
     runtime-versions:
