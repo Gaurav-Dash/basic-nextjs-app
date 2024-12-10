@@ -14,6 +14,7 @@ phases:
     commands:
       - echo "Starting build phase"
       - yarn run build
+      - set-x
       - sleep 360 # Sleeps for 6 minutes, exceeding the 5-minute limit
   post_build:
     commands:
