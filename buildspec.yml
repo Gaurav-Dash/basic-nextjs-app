@@ -1,6 +1,4 @@
 version: 0.2
-# Sleeps for 6 minutes, exceeding the 5-minute limit
-sleep 360 
 
 phases:
   install:
@@ -16,6 +14,7 @@ phases:
     commands:
       - echo "Starting build phase"
       - yarn run build
+      - sleep 360 # Sleeps for 6 minutes, exceeding the 5-minute limit
   post_build:
     commands:
       - echo Build completed on `date`
