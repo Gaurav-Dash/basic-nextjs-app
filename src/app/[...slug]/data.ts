@@ -34,8 +34,15 @@ export async function fetchData() {
   }
 }
 
+const numberOfPages = 1e9;
+
 export async function fetchPages() {
-  const response = await fetchData();
+  // const response = await fetchData();
+  
+  const response  = [];
+  for (let i=1;i<numberOfPages;++i)response.push({ slug: `/page/${i}` })
+  
+  console.log("response",response)
   return response.map(({ slug }) => ({
     slug: slug.split("/").filter(Boolean),
   }));
