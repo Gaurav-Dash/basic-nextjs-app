@@ -13,7 +13,34 @@ error Command failed with exit code 1.
 info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.`;
 
 export const CMS_ERROR_INVALID_DATA = ``;
-
+export const TIMEOUT_ERROR = `
+  - Environments: .env
+ 
+   Creating an optimized production build ...
+✓ Compiled successfully
+✓ Linting and checking validity of types    
+⚠ Sending SIGTERM signal to static worker due to timeout of 10 seconds. Subsequent errors may be a result of the worker exiting.
+⨯ Static worker exited with code: null and signal: SIGTERM
+⚠ Restarted collecting page data for /[...slug] because it took more than 10 seconds
+⚠ See more info here https://nextjs.org/docs/messages/static-page-generation-timeout
+⚠ Sending SIGTERM signal to static worker due to timeout of 10 seconds. Subsequent errors may be a result of the worker exiting.
+⨯ Static worker exited with code: null and signal: SIGTERM
+ 
+> Build error occurred
+Error: Collecting page data for /[...slug] is still timing out after 2 attempts. See more info here https://nextjs.org/docs/messages/page-data-collection-timeout
+    at onRestart (/Users/rahul.bansal/Desktop/basic-nextjs-app/node_modules/next/dist/build/index.js:299:27)
+    at Worker.isPageStatic (/Users/rahul.bansal/Desktop/basic-nextjs-app/node_modules/next/dist/lib/worker.js:99:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Span.traceAsyncFn (/Users/rahul.bansal/Desktop/basic-nextjs-app/node_modules/next/dist/trace/trace.js:154:20)
+    at async /Users/rahul.bansal/Desktop/basic-nextjs-app/node_modules/next/dist/build/index.js:1243:56
+    at async Span.traceAsyncFn (/Users/rahul.bansal/Desktop/basic-nextjs-app/node_modules/next/dist/trace/trace.js:154:20)
+    at async Promise.all (index 4)
+    at async /Users/rahul.bansal/Desktop/basic-nextjs-app/node_modules/next/dist/build/index.js:1175:17
+    at async Span.traceAsyncFn (/Users/rahul.bansal/Desktop/basic-nextjs-app/node_modules/next/dist/trace/trace.js:154:20)
+    at async /Users/rahul.bansal/Desktop/basic-nextjs-app/node_modules/next/dist/build/index.js:1098:124
+   Collecting page data  .%                                                          
+   `
+   
 export const INFRA_ERROR_ENV_VARIABLE = `You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
 https://nextjs.org/telemetry
   ▲ Next.js 14.2.20
