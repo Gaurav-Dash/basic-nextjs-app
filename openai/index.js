@@ -1,20 +1,20 @@
-import { errorString } from "./errors.js";
+import { RECURSIVE_ERROR } from "./errors.js";
 import { ASSISTANT_PROMPT_TEXT } from "./constants.js";
 import { loadStore } from "./loadStore.js";
 import { getCompletion } from "./helpers.js";
 // import { sendNotificationToTeams } from "./sendNotificationToTeams.js";
 
-const errorLogs = errorString;
+const errorLogs = RECURSIVE_ERROR;
 
 const query = async () => {
   const store = await loadStore();
 
-  // const results = await store.similaritySearch(errorLogs, 2);
+   const results = await store.similaritySearch(errorLogs, 2);
 
-  const results = store.memoryVectors.map((item) => ({
-    pageContent: item.content,
-    metadata: item.metadata,
-  }));
+  // const results = store.memoryVectors.map((item) => ({
+  //   pageContent: item.content,
+  //   metadata: item.metadata,
+  // }));
 
   const messages = [
     {

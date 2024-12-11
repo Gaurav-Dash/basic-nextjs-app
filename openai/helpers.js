@@ -14,7 +14,8 @@ export const functions = {
   },
 };
 
-export const getCompletion = async (messages) => {
+export const getCompletion = async (messages, retries=2) => {
+  retries--;
   const response = await openai.chat.completions.create({
     model: "gpt-4o",
     messages,
@@ -41,6 +42,14 @@ export const getCompletion = async (messages) => {
     ],
     temperature: 0,
   });
+  if(retries<=0)return response;
+  messages.push({
+    role:"assistant",
+    content:`Recheck the solution provided with ${response.data}, if it works with the given data and verify there are not any other problems. Finaly give best possible option of the error occurance and its solution and any other likely solution.
+     `
+  })
+  
+  return getCompletion(messages,retries)
 
-  return response;
+  // return response;
 };
