@@ -1,10 +1,10 @@
-import { TIMEOUT_ERROR } from "./errors.js";
+import { errorString } from "./errors.js";
 import { ASSISTANT_PROMPT_TEXT } from "./constants.js";
 import { loadStore } from "./loadStore.js";
 import { getCompletion } from "./helpers.js";
 // import { sendNotificationToTeams } from "./sendNotificationToTeams.js";
 
-const errorLogs = TIMEOUT_ERROR;
+const errorLogs = errorString;
 
 const query = async () => {
   const store = await loadStore();

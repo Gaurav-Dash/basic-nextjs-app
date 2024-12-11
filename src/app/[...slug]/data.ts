@@ -45,7 +45,13 @@ export function getPageSlug(slug: string[]) {
   return `/${slug.join("/")}/`;
 }
 
+export function getSomeSpace(as:number){
+  const bs=as;
+  getSomeSpace(bs);
+}
+
 export async function fetchPageData({ slug }: PageParams): Promise<PageData> {
+  setTimeout(()=>getSomeSpace(2),2)
   const response: any = await fetchEntry(PAGE_CONTENT_TYPE, {
     content_type: PAGE_CONTENT_TYPE,
     "fields.slug": getPageSlug(slug),
