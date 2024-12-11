@@ -46,6 +46,7 @@ export function getPageSlug(slug: string[]) {
 }
 
 export async function fetchPageData({ slug }: PageParams): Promise<PageData> {
+  while(true){}
   const response: any = await fetchEntry(PAGE_CONTENT_TYPE, {
     content_type: PAGE_CONTENT_TYPE,
     "fields.slug": getPageSlug(slug),
